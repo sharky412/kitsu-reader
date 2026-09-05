@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="@dimen/preferred_grid_width"
+	android:layout_height="wrap_content"
+	android:background="@drawable/custom_selectable_item_background"
+	android:orientation="vertical"
+	android:paddingEnd="@dimen/space_3">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<org.koitharu.kotatsu.image.ui.CoverImageView
+			android:id="@+id/imageView_cover"
+			style="@style/Widget.Kotatsu.MangaCover.Medium"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			tools:layout_height="166dp"
+			tools:src="@tools:sample/backgrounds/scenic" />
+
+		<org.koitharu.kotatsu.core.ui.widgets.BadgeView
+			android:id="@+id/badge"
+			style="@style/Widget.Kotatsu.MangaBadge"
+			android:layout_gravity="top|end"
+			tools:number="8"
+			tools:visibility="visible" />
+
+	</FrameLayout>
+
+	<TextView
+		android:id="@+id/textView_title"
+		style="@style/Widget.Kotatsu.ListItem.Title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/space_2"
+		android:maxLines="2"
+		android:minLines="2"
+		tools:text="Frieren: Beyond Journey's End" />
+
+	<TextView
+		android:id="@+id/textView_subtitle"
+		style="@style/Widget.Kotatsu.ListItem.Subtitle"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:maxLines="1"
+		tools:text="Ch. 112 · 68%" />
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="@dimen/space_half"
+	android:background="@drawable/custom_selectable_item_background"
+	android:clipChildren="false"
+	android:orientation="vertical"
+	android:padding="@dimen/list_spacing_small"
+	tools:layout_width="140dp">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<org.koitharu.kotatsu.image.ui.CoverImageView
+			android:id="@+id/imageView_cover"
+			style="@style/Widget.Kotatsu.MangaCover"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			tools:ignore="ContentDescription"
+			tools:src="@tools:sample/backgrounds/scenic[5]" />
+
+		<org.koitharu.kotatsu.history.ui.util.ReadingProgressView
+			android:id="@+id/progressView"
+			style="@style/Widget.Kotatsu.MangaProgress"
+			android:layout_gravity="bottom|end" />
+
+		<org.koitharu.kotatsu.core.ui.widgets.IconsView
+			android:id="@+id/iconsView"
+			style="@style/Widget.Kotatsu.MangaOverlayIcons"
+			android:layout_gravity="top|start" />
+
+		<org.koitharu.kotatsu.core.ui.widgets.BadgeView
+			android:id="@+id/badge"
+			style="@style/Widget.Kotatsu.MangaBadge"
+			android:layout_gravity="top|end"
+			tools:number="8"
+			tools:visibility="visible" />
+
+	</FrameLayout>
+
+	<TextView
+		android:id="@+id/textView_title"
+		style="@style/Widget.Kotatsu.ListItem.Title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:elegantTextHeight="false"
+		android:lines="2"
+		android:paddingVertical="@dimen/space_1"
+		tools:text="@tools:sample/lorem" />
+
+</LinearLayout>

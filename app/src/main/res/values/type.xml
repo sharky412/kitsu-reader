@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Typography tokens.
+
+	Layouts reference type through the Material 3 theme attributes (`?attr/textAppearanceTitleSmall`
+	and friends) in 184 places, so the scale is applied by remapping those attributes in
+	Base.Theme.Kotatsu rather than by editing layouts.
+
+	Rules for this scale:
+	  * Two weights only: regular and medium. Weight carries hierarchy, size carries structure.
+	  * Tracking is neutral or tight. Material's default positive tracking on small sizes reads as
+	    airy on a dense screen; a reader is dense by nature.
+	  * Numerals in labels are tabular, so chapter numbers, page counters and badge counts line up
+	    in a column instead of jittering as digits change.
+	  * Line heights are multiples of 2dp and sit on the 4dp spacing grid where possible.
+
+	Sizes that intentionally differ from the Material 3 defaults:
+	  * titleSmall  14sp -> 16sp. It is the manga title in every list row (44 usages); at 14sp the
+	    most important string on the screen was the same size as its own metadata.
+	  * bodySmall   12sp -> 13sp. Used for source names, dates and progress (31 usages).
+-->
+<resources>
+
+	<!--== Display: reserved for the single largest string on a screen ==-->
+	<style name="TextAppearance.Kotatsu.Display" parent="TextAppearance.Material3.HeadlineSmall">
+		<item name="android:textSize">28sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">-0.01</item>
+		<item name="lineHeight">34sp</item>
+	</style>
+
+	<!--== Titles ==-->
+	<style name="TextAppearance.Kotatsu.Title.Large" parent="TextAppearance.Material3.TitleLarge">
+		<item name="android:textSize">22sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">-0.005</item>
+		<item name="lineHeight">28sp</item>
+	</style>
+
+	<!--
+		Material's own size. This attribute is theme-wide: androidx preferences use it for every
+		settings row title, so inflating it here to make section headers stand out made every
+		settings screen heavier. Headers have their own appearance below instead.
+	-->
+	<style name="TextAppearance.Kotatsu.Title.Medium" parent="TextAppearance.Material3.TitleMedium">
+		<item name="android:textSize">16sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">24sp</item>
+	</style>
+
+	<!-- The heading above a section: one step above a row title, and used only by that style. -->
+	<style name="TextAppearance.Kotatsu.SectionHeader" parent="TextAppearance.Material3.TitleMedium">
+		<item name="android:textSize">18sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">24sp</item>
+	</style>
+
+	<!-- The manga title in list rows. -->
+	<style name="TextAppearance.Kotatsu.Title.Small" parent="TextAppearance.Material3.TitleSmall">
+		<item name="android:textSize">16sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">22sp</item>
+	</style>
+
+	<!--== Body ==-->
+	<style name="TextAppearance.Kotatsu.Body.Large" parent="TextAppearance.Material3.BodyLarge">
+		<item name="android:textSize">16sp</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">24sp</item>
+	</style>
+
+	<style name="TextAppearance.Kotatsu.Body.Medium" parent="TextAppearance.Material3.BodyMedium">
+		<item name="android:textSize">14sp</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">20sp</item>
+	</style>
+
+	<!-- Metadata: source, relative dates, progress. -->
+	<style name="TextAppearance.Kotatsu.Body.Small" parent="TextAppearance.Material3.BodySmall">
+		<item name="android:textSize">13sp</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">18sp</item>
+	</style>
+
+	<!--== Labels: buttons, chips, counters. Numerals are tabular. ==-->
+	<style name="TextAppearance.Kotatsu.Label.Large" parent="TextAppearance.Material3.LabelLarge">
+		<item name="android:textSize">14sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">20sp</item>
+		<item name="android:fontFeatureSettings">tnum</item>
+	</style>
+
+	<style name="TextAppearance.Kotatsu.Label.Medium" parent="TextAppearance.Material3.LabelMedium">
+		<item name="android:textSize">13sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">0</item>
+		<item name="lineHeight">16sp</item>
+		<item name="android:fontFeatureSettings">tnum</item>
+	</style>
+
+	<style name="TextAppearance.Kotatsu.Label.Small" parent="TextAppearance.Material3.LabelSmall">
+		<item name="android:textSize">11sp</item>
+		<item name="android:fontFamily">sans-serif-medium</item>
+		<item name="android:letterSpacing">0.005</item>
+		<item name="lineHeight">16sp</item>
+		<item name="android:fontFeatureSettings">tnum</item>
+	</style>
+
+</resources>

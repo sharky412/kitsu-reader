@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Spacing, radius and status tokens.
+
+	Spacing before this file was ad-hoc: `margin_normal`, `grid_spacing`, `list_spacing` and
+	`scrobbling_list_spacing` all described distances with unrelated names, and `list_spacing_small`
+	(6dp) sat off any grid. The legacy names are kept and redefined in terms of the scale below, so
+	the 151 existing layouts adopt the token system without being edited and without moving a pixel
+	where the values already agreed.
+
+	Use the token names in new work. Treat the legacy aliases as deprecated.
+-->
+<resources>
+
+	<!--== Spacing: a 4dp grid ==-->
+	<dimen name="space_1">4dp</dimen>
+	<dimen name="space_2">8dp</dimen>
+	<dimen name="space_3">12dp</dimen>
+	<dimen name="space_4">16dp</dimen>
+	<dimen name="space_6">24dp</dimen>
+	<dimen name="space_8">32dp</dimen>
+
+	<!-- Half step. Only for optical corrections inside a component, never for layout rhythm. -->
+	<dimen name="space_half">2dp</dimen>
+
+	<!--== Radius ==-->
+	<!--
+		Small artwork keeps a small radius on purpose: rounding a 40dp cover heavily eats the art
+		and reads as decoration. Sheets are the only place a large radius is correct, because there
+		the curve describes the surface rather than the content.
+	-->
+	<dimen name="radius_xs">4dp</dimen>
+	<dimen name="radius_sm">6dp</dimen>
+	<dimen name="radius_md">8dp</dimen>
+	<dimen name="radius_lg">12dp</dimen>
+	<dimen name="radius_xl">16dp</dimen>
+	<dimen name="radius_sheet">28dp</dimen>
+
+	<!--== Component sizes shared across state blocks ==-->
+	<dimen name="state_icon_size">120dp</dimen>
+
+	<!--
+		The legacy spacing and radius names stay in dimens.xml, redefined there as references to
+		these tokens, so there is exactly one definition of each resource.
+	-->
+
+	<!--== Status ==-->
+	<!--
+		Status colours are deliberately fixed across all eleven colour schemes. "New", "downloaded"
+		and "adult" must mean the same thing after a user switches theme; if they followed the
+		accent they would stop being signals and become decoration.
+	-->
+	<color name="status_new">#2E7D32</color>
+	<color name="status_downloaded">#00695C</color>
+	<color name="status_warning">@color/warning</color>
+	<color name="status_error">@color/error</color>
+	<color name="status_nsfw">@color/nsfw_18</color>
+	<color name="status_nsfw_soft">@color/nsfw_16</color>
+
+</resources>

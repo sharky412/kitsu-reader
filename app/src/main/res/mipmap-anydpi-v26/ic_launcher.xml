@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+	The Kitsu mark. Adaptive icons only guarantee the middle of the canvas survives the launcher's
+	mask, so the mark sits inside that safe area over the brand colour rather than bleeding to the
+	edges and losing the fox's ears. The themed layer is a separate silhouette, because tinting the
+	artwork itself would flatten it into a solid block.
+-->
+<adaptive-icon
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<background android:drawable="@color/launcher_background" />
+	<foreground android:drawable="@mipmap/ic_launcher_foreground" />
+	<monochrome android:drawable="@drawable/ic_launcher_monochrome" />
+</adaptive-icon>

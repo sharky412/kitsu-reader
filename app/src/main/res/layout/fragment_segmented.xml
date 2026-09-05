@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<HorizontalScrollView
+		android:id="@+id/scrollView_segments"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingHorizontal="@dimen/space_4"
+		android:paddingVertical="@dimen/space_2"
+		android:scrollbars="none">
+
+		<com.google.android.material.button.MaterialButtonToggleGroup
+			android:id="@+id/group_segments"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:selectionRequired="true"
+			app:singleSelection="true" />
+
+	</HorizontalScrollView>
+
+	<androidx.fragment.app.FragmentContainerView
+		android:id="@+id/container_segment"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+
+</LinearLayout>

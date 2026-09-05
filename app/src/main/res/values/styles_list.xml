@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+	The shared parts of a manga list item.
+
+	Four layouts draw a manga in a list, and each one used to spell out the same cover background,
+	the same badge inset and the same text treatment in its own words. That is how they drifted
+	apart. Each layout now says only where a part goes; what it looks like lives here.
+
+	Positioning stays in the layouts on purpose: constraints and gravity belong to the parent, and a
+	shared style cannot know whether its parent is a ConstraintLayout or a FrameLayout.
+
+	See docs/redesign/LIST_SYSTEM.md for the rules these styles encode.
+-->
+<resources>
+
+	<!-- The cover artwork. Corner radius scales with how large the cover is drawn. -->
+	<style name="Widget.Kotatsu.MangaCover" parent="Widget.Kotatsu.ImageView.Cover">
+		<item name="android:background">?attr/colorSurfaceContainer</item>
+		<item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Kotatsu.Cover</item>
+	</style>
+
+	<style name="Widget.Kotatsu.MangaCover.Medium">
+		<item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Kotatsu.Cover.Medium</item>
+	</style>
+
+	<!--
+		A thumbnail small enough that the aspect ratio is dropped and the artwork is cropped square;
+		see the note on the compact row in LIST_SYSTEM.md.
+	-->
+	<style name="Widget.Kotatsu.MangaCover.Thumbnail">
+		<item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Kotatsu.Cover.Small</item>
+		<item name="aspectRationHeight">0</item>
+		<item name="aspectRationWidth">0</item>
+	</style>
+
+	<!-- Unread chapter count, in one corner of the cover. -->
+	<style name="Widget.Kotatsu.MangaBadge" parent="">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_margin">@dimen/space_2</item>
+		<item name="android:visibility">gone</item>
+		<item name="maxCharacterCount">@integer/manga_badge_max_character_count</item>
+	</style>
+
+	<!-- Reading progress, in the opposite corner from the badge and inset to match it. -->
+	<style name="Widget.Kotatsu.MangaProgress" parent="">
+		<item name="android:layout_width">@dimen/card_indicator_size</item>
+		<item name="android:layout_height">@dimen/card_indicator_size</item>
+		<item name="android:layout_margin">@dimen/space_2</item>
+	</style>
+
+	<!-- Small state icons drawn over the cover: downloaded, NSFW, and so on. -->
+	<style name="Widget.Kotatsu.MangaOverlayIcons" parent="">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_margin">@dimen/space_2</item>
+		<item name="android:background">@drawable/bg_list_icons</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:padding">@dimen/space_1</item>
+		<item name="iconSize">14dp</item>
+		<item name="iconSpacing">@dimen/space_1</item>
+	</style>
+
+	<!--
+		The heading above a section of content: a date group in a list, "Description" on the details
+		screen. One step above a row title so a section reads as a section.
+	-->
+	<style name="Widget.Kotatsu.SectionHeader" parent="">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center_vertical|start</item>
+		<item name="android:padding">@dimen/space_3</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textAppearance">@style/TextAppearance.Kotatsu.SectionHeader</item>
+	</style>
+
+	<!-- A field name in the details table. A label, not a heading. -->
+	<style name="Widget.Kotatsu.FieldLabel" parent="">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
+
+	<!-- The manga's title. Line count differs per layout and stays there. -->
+	<style name="Widget.Kotatsu.ListItem.Title" parent="">
+		<item name="android:ellipsize">end</item>
+		<item name="android:textAppearance">?attr/textAppearanceTitleSmall</item>
+	</style>
+
+	<!-- Anything below the title: source, progress, tags. -->
+	<style name="Widget.Kotatsu.ListItem.Subtitle" parent="">
+		<item name="android:ellipsize">end</item>
+		<item name="android:textAppearance">?attr/textAppearanceBodySmall</item>
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
+
+</resources>

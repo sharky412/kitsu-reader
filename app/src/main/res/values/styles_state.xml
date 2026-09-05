@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	State blocks: empty, error and loading.
+
+	Before this file each state screen invented its own spacing and type. The empty state used a
+	192dp illustration with a TitleLarge heading, the inline empty hint used 120dp with TitleMedium,
+	the error state used BodyMedium with no heading at all, and the paddings between them were 32dp,
+	16dp, 12dp, 6dp and 4dp. Users met all of these in the same session and could not tell that they
+	were the same kind of moment.
+
+	One vocabulary, three shapes:
+
+	  Empty    icon, one line saying what is here, one line saying why, one action.
+	  Error    icon, what went wrong in plain words, a primary action, an optional escape hatch.
+	  Loading  a determinate bar when progress is known, an indeterminate one when it is not.
+
+	Every state block must offer a next action. A dead end is a bug, not a state.
+-->
+<resources>
+
+	<!--== Container ==-->
+	<style name="Widget.Kotatsu.State" parent="">
+		<item name="android:orientation">vertical</item>
+		<item name="android:gravity">center</item>
+		<item name="android:paddingLeft">@dimen/space_8</item>
+		<item name="android:paddingRight">@dimen/space_8</item>
+		<item name="android:paddingTop">@dimen/space_6</item>
+	</style>
+
+	<!--
+		One illustration size everywhere. 192dp pushed the message below the fold on small screens
+		and made an empty library look like an error; 120dp keeps the words in view.
+	-->
+	<style name="Widget.Kotatsu.State.Icon" parent="">
+		<item name="android:layout_width">@dimen/state_icon_size</item>
+		<item name="android:layout_height">@dimen/state_icon_size</item>
+		<item name="android:scaleType">fitCenter</item>
+		<item name="android:contentDescription">@null</item>
+	</style>
+
+	<style name="Widget.Kotatsu.State.Title" parent="">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">@dimen/space_4</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textAlignment">center</item>
+		<!--
+			The most prominent text on an otherwise blank screen, so it keeps the larger size that
+			`textAppearanceTitleMedium` used to carry before that attribute went back to Material's.
+		-->
+		<item name="android:textAppearance">@style/TextAppearance.Kotatsu.SectionHeader</item>
+	</style>
+
+	<style name="Widget.Kotatsu.State.Body" parent="">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">@dimen/space_2</item>
+		<item name="android:gravity">center</item>
+		<item name="android:textAlignment">center</item>
+		<item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+		<item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+	</style>
+
+	<style name="Widget.Kotatsu.State.Action" parent="">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">@dimen/space_6</item>
+	</style>
+
+	<!-- The escape hatch, always subordinate to the primary action. -->
+	<style name="Widget.Kotatsu.State.Action.Secondary" parent="Widget.Kotatsu.State.Action">
+		<item name="android:layout_marginTop">@dimen/space_1</item>
+	</style>
+
+</resources>
