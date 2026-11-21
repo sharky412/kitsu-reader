@@ -4,8 +4,9 @@
 
 **A free and open-source manga reader for Android with built-in online content sources.**
 
-![Android 6.0](https://img.shields.io/badge/android-6.0+-brightgreen)
-[![License](https://img.shields.io/github/license/sharky412/kitsu-reader)](LICENSE)
+![Android 6.0+](https://img.shields.io/badge/Android-6.0%2B-3DDC84?logo=android&logoColor=white)
+![Kotlin](https://img.shields.io/badge/Kotlin-2.2-7F52FF?logo=kotlin&logoColor=white)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 
 </div>
 
@@ -36,11 +37,11 @@ Requires JDK 17+ and the Android SDK.
 
 Build variants:
 
-| Variant   | Application id                  | Notes                                  |
-|-----------|---------------------------------|----------------------------------------|
-| `debug`   | `org.koitharu.kotatsu.debug`    | StrictMode and debug tooling enabled    |
-| `nightly` | `org.koitharu.kotatsu.nightly`  | Side-by-side install, LeakCanary        |
-| `release` | `org.koitharu.kotatsu`          | Distribution build                      |
+| Variant   | Application ID                 | Notes                                |
+|-----------|--------------------------------|--------------------------------------|
+| `debug`   | `org.koitharu.kotatsu.debug`   | StrictMode and debug tooling enabled |
+| `nightly` | `org.koitharu.kotatsu.nightly` | Side-by-side install, LeakCanary     |
+| `release` | `org.koitharu.kotatsu`         | Distribution build                   |
 
 ### Contributing
 
